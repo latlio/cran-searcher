@@ -26,8 +26,8 @@
         <li><a href="#built-with">Built With</a></li>
       </ul>
     </li>
+    <li><a href="#usage">Usage</a></li>
     <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
     <li><a href="#references">Acknowledgments</a></li>
   </ol>
@@ -38,12 +38,17 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]]()
+From personal experience, I know how difficult it is to keep up with the R ecosystem. There are so many new packages and creative ways in which people are using R to do amazing things. R users will all be familiar with CRAN, or the Comprehensive R Archive Network, which acts as a regulated repository for all R packages. I've created a simple Shiny App that provides a summary of CRAN (a la #spotifywrapped) as well as a searchable database  of all CRAN packages that updates periodically.
 
+Enjoy!
 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
+## Usage
+
+
+<p align="right">(<a href="#top">back to top</a>)</p>
 
 
 ### Built With
@@ -77,19 +82,10 @@ Don't forget to give the project a star! Thanks again!
 
 
 
-<!-- LICENSE -->
-## License
-
-Distributed under the MIT License. See `LICENSE.txt` for more information.
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-
-
 <!-- CONTACT -->
 ## Contact
 
-Lathan Liou - [@lathanliou](https://twitter.com/LathanLiou)
+Twitter: [@lathanliou](https://twitter.com/LathanLiou)
 
 Project Link: [(C)RAN++](https://github.com/github_username/repo_name)
 
@@ -102,6 +98,7 @@ Project Link: [(C)RAN++](https://github.com/github_username/repo_name)
 
 * [Text Analysis Textbook](https://www.tidytextmining.com/)
 * [Text Analysis Article](https://www.red-gate.com/simple-talk/databases/sql-server/bi-sql-server/text-mining-and-sentiment-analysis-with-r/)
+* [README template](https://github.com/latlio/Best-README-Template/blob/master/BLANK_README.md)
 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
