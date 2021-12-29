@@ -25,6 +25,9 @@
       <ul>
         <li><a href="#built-with">Built With</a></li>
       </ul>
+      <ul>
+        <li><a href="#notes">Notes</a></li>
+      </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
     <li><a href="#contributing">Contributing</a></li>
@@ -34,22 +37,12 @@
 </details>
 
 
-
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
 From personal experience, I know how difficult it is to keep up with the R ecosystem. There are so many new packages and creative ways in which people are using R to do amazing things. R users will all be familiar with CRAN, or the Comprehensive R Archive Network, which acts as a regulated repository for all R packages. I've created a simple Shiny App that provides a summary of CRAN (a la #spotifywrapped) as well as a searchable database  of all CRAN packages that updates periodically.
 
 Enjoy!
-
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-## Usage
-
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
 
 ### Built With
 
@@ -60,8 +53,17 @@ Enjoy!
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
+### Notes
+
+* Web scraping is performed with a configured Google DNS server on MacOS Big Sur (v11.6.1)
+* I parallelized the web scraping script
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+## Usage
 
 
+<p align="right">(<a href="#top">back to top</a>)</p>
 
 
 <!-- CONTRIBUTING -->
@@ -99,6 +101,7 @@ Project Link: [(C)RAN++](https://github.com/github_username/repo_name)
 * [Text Analysis Textbook](https://www.tidytextmining.com/)
 * [Text Analysis Article](https://www.red-gate.com/simple-talk/databases/sql-server/bi-sql-server/text-mining-and-sentiment-analysis-with-r/)
 * [README template](https://github.com/latlio/Best-README-Template/blob/master/BLANK_README.md)
+* [Changing DNS Server](macinstruct.com/tutorials/how-to-change-your-macs-dns-servers/)
 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
