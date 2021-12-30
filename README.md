@@ -29,7 +29,18 @@
         <li><a href="#notes">Notes</a></li>
       </ul>
     </li>
-    <li><a href="#usage">Usage</a></li>
+    <li>
+      <a href="#usage">Usage</a>
+      <ul>
+        <li><a href="#dashboard">Dashboard</a></li>
+      </ul>
+      <ul>
+        <li><a href="#database">Database</a></li>
+      </ul>
+      <ul>
+        <li><a href="#tweets">Tweets</a></li>
+      </ul>
+    </li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#contact">Contact</a></li>
     <li><a href="#references">Acknowledgments</a></li>
@@ -62,6 +73,17 @@ Enjoy!
 
 ## Usage
 
+There are three primary tabs: Dashboard, Database, and Tweets.
+
+### Dashboard
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+### Database
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+### Tweets
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -102,6 +124,6 @@ Project Link: [(C)RAN++](https://github.com/github_username/repo_name)
 * [Text Analysis Article](https://www.red-gate.com/simple-talk/databases/sql-server/bi-sql-server/text-mining-and-sentiment-analysis-with-r/)
 * [README template](https://github.com/latlio/Best-README-Template/blob/master/BLANK_README.md)
 * [Changing DNS Server](macinstruct.com/tutorials/how-to-change-your-macs-dns-servers/)
-
+* [Shiny Wordcloud2 workaround](https://github.com/rstudio/shinydashboard/issues/281)
 
 <p align="right">(<a href="#top">back to top</a>)</p>

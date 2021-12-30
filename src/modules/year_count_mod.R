@@ -7,7 +7,9 @@ year_count_ui <- function(id) {
     title = "Packages published by year",
     collapsible = TRUE,
     status = "primary",
-    plotlyOutput(ns("year_plot"))
+    plotlyOutput(ns("year_plot")) %>% 
+      withSpinner(type = 8,
+                  color = "#4285F4")
   )
 }
 
