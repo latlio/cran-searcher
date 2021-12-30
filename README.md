@@ -153,5 +153,6 @@ Project Link: [(C)RAN++](https://github.com/github_username/repo_name)
 * [Changing DNS Server](macinstruct.com/tutorials/how-to-change-your-macs-dns-servers/)
 * [Shiny Wordcloud2 workaround](https://github.com/rstudio/shinydashboard/issues/281)
 * [Dashboard Inspiration](garrickadenbuie.com)
+* [Connecting Google Drive to Shiny](https://www.jdtrat.com/blog/connect-shiny-google/)
 
 <p align="right">(<a href="#top">back to top</a>)</p>

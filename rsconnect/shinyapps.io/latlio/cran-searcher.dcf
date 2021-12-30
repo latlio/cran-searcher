@@ -5,10 +5,10 @@ account: latlio
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 5381137
-bundleId: 5420184
+bundleId: 5420357
 url: https://latlio.shinyapps.io/cran-searcher/
-when: 1640880745.81445
-lastSyncTime: 1640880745.81446
+when: 1640885451.33885
+lastSyncTime: 1640885451.33886
 asMultiple: FALSE
 asStatic: FALSE
 ignoredFiles: data/.DS_Store|data/rstats/.tweets.rds.lock
