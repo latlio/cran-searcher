@@ -55,11 +55,13 @@ From personal experience, I know how difficult it is to keep up with the R ecosy
 
 Enjoy!
 
-### Built With
+### &#x1F64F Built With
 
 * [tidyverse](https://www.tidyverse.org/)
 * [shiny](https://shiny.rstudio.com/)
-
+* [shinydashboard](https://rstudio.github.io/shinydashboard/)
+* [shinycssloaders](https://github.com/daattali/shinycssloaders)
+* [plotly](https://plotly.com/)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -67,7 +69,7 @@ Enjoy!
 ### Notes
 
 * Web scraping is performed with a configured Google DNS server on MacOS Big Sur (v11.6.1)
-* I parallelized the web scraping script
+* I parallelized the web scraping script using `foreach` and `doParallel`
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -125,5 +127,6 @@ Project Link: [(C)RAN++](https://github.com/github_username/repo_name)
 * [README template](https://github.com/latlio/Best-README-Template/blob/master/BLANK_README.md)
 * [Changing DNS Server](macinstruct.com/tutorials/how-to-change-your-macs-dns-servers/)
 * [Shiny Wordcloud2 workaround](https://github.com/rstudio/shinydashboard/issues/281)
+* [Dashboard Inspiration](garrickadenbuie.com)
 
 <p align="right">(<a href="#top">back to top</a>)</p>

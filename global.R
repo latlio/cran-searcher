@@ -9,6 +9,7 @@ library(tidytext)
 library(SnowballC)
 library(wordcloud2)
 library(shinycssloaders)
+library(rtweet) 
 
 # Modules ----
 modules <- list.files("src/modules",
