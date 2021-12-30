@@ -2,7 +2,19 @@
 # Author: Lathan Liou
 
 server <- function(input, output, session) {
-  data <- readRDS("data/cran-2021-12-29.rds")
+  cran_temp <- tempfile()
+  cran_dl <- drive_download(
+    file = as_id("1kR_D9KQ2Exf-NBlrXWNu50kmtt6ncpp2"),
+    path = cran_temp,
+    overwrite = TRUE)
+  
+  tweet_temp <- tempfile()
+  tweet_dl <- drive_download(
+    file = as_id("1J39RgL9as_87J6O8TfzlY-CltaCBYF61"),
+    path = tweet_temp,
+    overwrite = TRUE)
+  
+  data <- readRDS(cran_dl$local_path[1])
   year_count_server("year_plot", data)
   total_count_server("n_pkgs", data)
   import_count_server("imports_plot", data)
@@ -13,7 +25,7 @@ server <- function(input, output, session) {
   # Tweet Wall --------------------------------------------------------------
   tweets <- reactiveFileReader(1 * 60 * 1000, 
                                session, 
-                               "data/rstats/tweets.rds", 
+                               tweet_dl$local_path[1], 
                                import_tweets)
   
   tweets_simple <- reactive({

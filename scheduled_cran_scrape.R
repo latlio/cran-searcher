@@ -28,4 +28,4 @@ all_cran_metadata_df <- bind_rows(all_cran_metadata) %>%
          maintainer = str_replace(maintainer, "<[^\\)]+>", ""),
          maintainer = noquote(maintainer))
 
-write_rds(all_cran_metadata_df, paste0("data/cran-data.rds"))
+write_rds(all_cran_metadata_df, paste0("data/cran-", Sys.Date(), ".rds"))

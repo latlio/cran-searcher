@@ -11,6 +11,7 @@ library(SnowballC)
 library(wordcloud2)
 library(shinycssloaders)
 library(rtweet) 
+library(googledrive)
 
 # Modules ----
 modules <- list.files("src/modules",
