@@ -3,14 +3,14 @@
   <p align="center">
     A Shiny App to search CRAN
     <br />
-    <a href="https://github.com/latlio/cran-searcher"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/latlio/cran-searcher" target="_blank" rel="noopener noreferrer"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://latlio.shinyapps.io/cran-searcher/">View App</a>
+    <a href="https://latlio.shinyapps.io/cran-searcher/" target="_blank" rel="noopener noreferrer">View App</a>
     ·
-    <a href="https://github.com/latlio/cran-searcher/issues">Report Bug</a>
+    <a href="https://github.com/latlio/cran-searcher/issues" target="_blank" rel="noopener noreferrer">Report Bug</a>
     ·
-    <a href="https://github.com/latlio/cran-searcher/issues">Request Feature</a>
+    <a href="https://github.com/latlio/cran-searcher/issues" target="_blank" rel="noopener noreferrer">Request Feature</a>
   </p>
 </div>
 
@@ -67,6 +67,7 @@ Enjoy!
 * [shinycssloaders](https://github.com/daattali/shinycssloaders)
 * [plotly](https://plotly.com/)
 * [rtweet](https://github.com/ropensci/rtweet)
+* [shinyThings](https://github.com/gadenbuie/shinythings)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
