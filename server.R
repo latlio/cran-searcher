@@ -8,4 +8,5 @@ server <- function(input, output) {
   import_count_server("imports_plot", data)
   suggest_count_server("suggests_plot", data)
   word_count_server("word_plot", data)
+  table_server("cran_table", data)
 }

@@ -11,7 +11,8 @@ ui <- dashboardPage(
       menuItem("Dashboard", tabName = "dashboard", icon = icon("home")),
       menuItem("Database", tabName = "database", icon = icon("table")),
       menuItem("Tweets", tabName = "tweets", icon = icon("twitter")),
-      menuItem("Source Code", tabName = "code", icon = icon("github"))
+      menuItem("Source Code", icon = icon("github"),
+               href = "https://github.com/latlio/cran-searcher")
     )
   ),
   dashboardBody(
@@ -29,9 +30,11 @@ ui <- dashboardPage(
                 suggest_count_ui("suggests_plot")
               )
       ),
-      tabItem(tabName = "database"),
-      tabItem(tabName = "tweets"),
-      tabItem(tabName = "code")
+      tabItem(tabName = "database",
+              fluidRow(
+                table_ui("cran_table")
+              )),
+      tabItem(tabName = "tweets")
     )
   )
 )
