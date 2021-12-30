@@ -17,6 +17,8 @@ modules <- list.files("src/modules",
                       full.names = TRUE)
 sapply(modules, source)
 
+source("00_settings.R")
+source("src/twitter_functions.R")
 source("ui.R")
 source("server.R")
 

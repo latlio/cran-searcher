@@ -1,23 +1,11 @@
 # ---- Metadata ----
 META <- list(
   # Name of the app, used in the browser/tab title
-  name        = "rstudio::conf(\'tweets\')",
+  name        = "(C)RAN++",
   # A description of the app, used in social media cards
-  description = "A Shiny Dashboard, rstudio::conf #FOMO reducer, tweet explorer by @grrrck",
+  description = "A Shiny Dashboard of CRAN by @lathanliou",
   # Link to the app, used in social media cards
   app_url     = "https://apps.garrickadenbuie.com/rstudioconf-2019/",
-  # Link to app icon image, used in social media cards
-  app_icon    = "https://garrickadenbuie.com/images/2019/rstudioconf-2019-icon.png",
-  # The name of the conference or organization
-  conf_org    = "rstudio::conf",
-  # App title, long, shown when sidebar is open, HTML is valid
-  logo_lg     = "<em>rstudio</em>::<strong>conf</strong>(2019)",
-  # App title, short, shown when sidebar is collapsed, HTML is valid
-  logo_mini   = "<em>rs</em><strong>c</strong>",
-  # Icon for box with count of conference-related tweets
-  topic_icon  = "comments",
-  # Icon for box with count of "community"-related tweets
-  topic_icon_full = "r-project",
   # AdminLTE skin color for the dashboard
   skin_color  = "blue-light",
   # AdminLTE theme CSS files
@@ -61,14 +49,7 @@ TWEET_MOST <- list(
 )
 
 # ---- Dates and Times ----
-TWEETS_START_DATE <- "2019-01-01"  # Don't show tweets before this date
-TZ_GLOBAL <- "America/Chicago"     # Time zone where conference is taking place
-Sys.setenv(TZ = TZ_GLOBAL)
 
-# A helper to get today() in the app's timezone
-# * Note that tz_global() returns the system timezone,
-#   or can be overwritten with tz_global("other/timezone")
-today_tz <- function() today(tz_global())
 
 # TWEET_WALL_DATE_INPUTS:
 # A character vector containing the Shiny input IDs and button labels (names)
@@ -76,26 +57,10 @@ today_tz <- function() today(tz_global())
 # need to be defined there.
 TWEET_WALL_DATE_INPUTS <- c(
   "Today"     = "today",
-  "Yesterday" = "yesterday",
+  "Since Yesterday" = "since_yesterday",
   "Past week" = "past_week",
-  "In 2019"   = "in_2019"
+  "Past year" = "past_year"
 )
-
-# Conference-related dates, used only for the rest of this section
-.workshop_start   <- ymd("2019-01-15", tz = tz_global())
-.conference_start <- ymd("2019-01-17", tz = tz_global())
-
-# Only show "Since Workshop" button _after_ workshops have started
-if (today_tz() > .workshop_start) {
-  TWEET_WALL_DATE_INPUTS <- c(
-    TWEET_WALL_DATE_INPUTS, "Since Workshops" = "since_workshop")
-}
-
-# Only show "Conference Proper" button _after_ conference has started
-if (today_tz() > .conference_start) {
-  TWEET_WALL_DATE_INPUTS <- c(
-    TWEET_WALL_DATE_INPUTS, "Conference Proper" = "conf_prop")
-}
 
 # TWEET_WALL_DATE_RANGE:
 # A function that returns a date range as c(start, end) for each inputId defined
@@ -104,25 +69,14 @@ if (today_tz() > .conference_start) {
 TWEET_WALL_DATE_RANGE <- function(inputId) {
   switch(
     inputId,
-    "today"          = c(start = today_tz(),        end = today_tz()),
-    "yesterday"      = c(start = today_tz() - 1,    end = today_tz() - 1),
-    "past_week"      = c(start = today_tz() - 7,    end = today_tz()),
-    "in_2019"        = c(start = ymd("2019-01-01"), end = today_tz()),
-    "since_workshop" = c(start = .workshop_start,   end = today_tz()),
-    "conf_prop"      = c(start = .conference_start, end = today_tz()),
-    "conf_and_after" = c(start = .workshop_start,   end = today_tz()),
+    "today"          = c(start = today(),        end = today()),
+    "since_yesterday"= c(start = today() - 1,    end = today()),
+    "past_week"      = c(start = today() - 7,    end = today()),
+    "past_year"      = c(start = today() - 365,  end = today()),
     NA
   )
 }
 
-# ---- Schedule ----
-# If you would like to include an interactive table of the conference schedule,
-# then provide a named list to schedule. Use only `SCHEDULE$url` to have the
-# sidebar button link directly to the conference schedule. Or also provide
-# `SCHEDULE$data` to display an interactive dataTable of the schedule.
-SCHEDULE <- list()
-SCHEDULE$url <- "https://www.rstudio.com/conference/"
-SCHEDULE$data <- readRDS(here::here("data/schedule.rds"))
 
 # ---- Google Analytics Key ----
 # If you would like to use Google Analytics, save your GA key in a file called
@@ -163,8 +117,8 @@ ADMINLTE_COLORS <- list(
   "info"       = "#a3c1e0",
   "warning"    = "#FAC863"
 )
-options("spinner.color" = ADMINLTE_COLORS$`gray-lte`)
-options("spinner.color.background" = "#F9FAFB")
+# options("spinner.color" = ADMINLTE_COLORS$`gray-lte`)
+# options("spinner.color.background" = "#F9FAFB")
 
 # ---- Blocklist ----
 # A list with named list elements `status_id` and `screen_name`. Block specific
@@ -178,19 +132,3 @@ BLOCKLIST <- list(
     "paukniccadi"
   )
 )
-
-
-# Demo Settings -----------------------------------------------------------
-DEMO <- list(
-  relive_date = ymd("2019-01-18", tz = tz_global())
-)
-
-if (exists("DEMO") && !is.null(DEMO$relive_date)) {
-  DEMO$adjust_days <-
-    difftime(today_tz(), DEMO$relive_date, unit = "day") %>%
-    as.numeric() %>%
-    ceiling()
-
-  .workshop_start   <<- as_date(.workshop_start + days(DEMO$adjust_days))
-  .conference_start <<- as_date(.conference_start + days(DEMO$adjust_days))
-}

@@ -1,4 +1,4 @@
-# Module for tweet bulletin board
+# Module for tweet bulletin board - NOT WORKING
 # Borrowed from Garrick Aden-Buie
 
 tweet_board_ui <- function(id) {

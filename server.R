@@ -49,4 +49,15 @@ server <- function(input, output, session) {
       slice(s_page_items) %>%
       masonify_tweets()
   })
+  
+  tweet_wall_date_preset <- shinyThings::dropdownButton("tweet_wall_date_presets",
+                                                        options = TWEET_WALL_DATE_INPUTS)
+  
+  observe({
+    req(tweet_wall_date_preset())
+    update_dates <- TWEET_WALL_DATE_RANGE(tweet_wall_date_preset())
+    if (any(is.na(update_dates))) return(NULL)
+    update_dates <- strftime(update_dates, "%F", usetz = TRUE) %>% unname()
+    updateDateRangeInput(session, "tweet_wall_daterange", start = update_dates[1], end = update_dates[2], max = today())
+  })
 }

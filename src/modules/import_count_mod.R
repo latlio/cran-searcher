@@ -6,7 +6,7 @@ import_count_ui <- function(id) {
   shinydashboard::box(
     title = "Most common imports",
     collapsible = TRUE,
-    status = "primary",
+    status = "danger",
     plotlyOutput(ns("imports_plot")) %>% 
       withSpinner(type = 8,
                   color = "#4285F4")
@@ -28,7 +28,7 @@ import_count_server <- function(id, data) {
                      ungroup() %>%
                      slice_head(n = 20)
                    p <- ggplot(plotdata, aes(x = reorder(imports, n), y = n)) + 
-                     geom_col() + 
+                     geom_col(fill = ADMINLTE_COLORS$danger) + 
                      theme_bw() +
                      labs(x = "Package",
                           y = "Count") + 

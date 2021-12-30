@@ -2,6 +2,7 @@
 
 table_ui <- function(id) {
   ns <- NS(id)
+  p("You can use regex in the main search bar")
   DT::dataTableOutput(ns("cran_table")) %>% 
     withSpinner(type = 8,
                 color = "#4285F4")

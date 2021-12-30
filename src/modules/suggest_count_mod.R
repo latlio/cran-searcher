@@ -6,7 +6,7 @@ suggest_count_ui <- function(id) {
   shinydashboard::box(
     title = "Most common suggests",
     collapsible = TRUE,
-    status = "primary",
+    status = "info",
     plotlyOutput(ns("suggests_plot")) %>% 
       withSpinner(type = 8,
                   color = "#4285F4")
@@ -28,7 +28,7 @@ suggest_count_server <- function(id, data) {
                      ungroup() %>%
                      slice_head(n = 20)
                    p <- ggplot(plotdata, aes(x = reorder(suggests, n), y = n)) + 
-                     geom_col() + 
+                     geom_col(fill = ADMINLTE_COLORS$info) + 
                      theme_bw() +
                      labs(x = "Package",
                           y = "Count") + 

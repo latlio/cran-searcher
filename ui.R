@@ -1,9 +1,10 @@
 # UI 
 # Author: Lathan Liou
+# Settings are represented by ALL CAPS objs and can be toggled in 00_settings.R
 
 ui <- dashboardPage(
   skin = "black",
-  dashboardHeader(title = "(C)RAN++"),
+  dashboardHeader(title = META$name),
   dashboardSidebar(
     sidebarMenu(
       menuItem("Dashboard", tabName = "dashboard", icon = icon("home")),
@@ -20,6 +21,13 @@ ui <- dashboardPage(
     ),
     tabItems(
       tabItem(tabName = "dashboard",
+              HTML(glue::glue(
+                '<meta property="og:title" content="{META$name}">
+            <meta property="og:description" content="{META$description}">
+            <meta name="twitter:creator" content="@lathanliou">
+            <meta name="twitter:site" content="https://lathanliou.com">
+            '
+              )),
               fluidRow(
                 year_count_ui("year_plot"),
                 column(width = 6,
@@ -41,6 +49,7 @@ ui <- dashboardPage(
         "tweet_wall",
         class = "text-center",
         tags$h1("Tweets about #rstats"),
+        tags$h4("Borrowed from Garrick Aden-Buie"),
         # Tweet Wall - twitter.js and masonry.css - start --------------------
         # twitter.js has to be loaded after the page is loaded (divs exist and jquery is loaded)
         tags$head(HTML(
@@ -71,9 +80,9 @@ ui <- dashboardPage(
                                  start = today(), end = today(),
                                  min = "2015-01-01", max = today(),
                                  weekstart = 1, separator = " to "),
-                  # shinyThings::dropdownButtonUI("tweet_wall_date_presets",
-                  #                               TWEET_WALL_DATE_INPUTS,
-                  #                               class = "btn-default")
+                  shinyThings::dropdownButtonUI("tweet_wall_date_presets",
+                                                TWEET_WALL_DATE_INPUTS,
+                                                class = "btn-default")
                 )
               )
             )
@@ -97,14 +106,15 @@ ui <- dashboardPage(
                 ),
                 tags$p(
                   class = "text-center",
+                  HTML(twemoji("1F44B")),
                   tags$strong("Hi! I'm Lathan."),
                   HTML(paste0("(", tags$a(href = "https://twitter.com/lathanliou", "@lathanliou"), ")"))
                 ),
                 tags$p(
-                  "I'm currently a data scientist at Merck, where I focus on building Shiny apps, generating interactive reports, and doing differential expresssion analysis."),
-                tags$p("I also perform epidemiological research at the Harvard School of Public Health and continue researching", 
+                  "I'm currently a data scientist at Merck, where I focus on building Shiny apps, generating interactive reports, and doing differential expression analysis."),
+                tags$p("I also perform epidemiological research at the Harvard School of Public Health and continue my research projects on ", 
                        tags$a(href = "https://github.com/dsrobertson/onlineFDR", "online false discovery rate", target = "_blank"), 
-                       "at the University of Cambridge."),
+                       "from the University of Cambridge."),
                 tags$p("You can read more about me and some of my other projects at ",
                        HTML(paste0(tags$a(href = "https://lathanliou.com", "lathanliou.com", target = "_blank"), "."))
                 )

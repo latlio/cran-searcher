@@ -6,7 +6,7 @@
     <a href="https://github.com/latlio/cran-searcher"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/github_username/repo_name">View Demo</a>
+    <a href="https://latlio.shinyapps.io/cran-searcher/">View App</a>
     ·
     <a href="https://github.com/latlio/cran-searcher/issues">Report Bug</a>
     ·
@@ -51,17 +51,22 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-From personal experience, I know how difficult it is to keep up with the R ecosystem. There are so many new packages and creative ways in which people are using R to do amazing things. R users will all be familiar with CRAN, or the Comprehensive R Archive Network, which acts as a regulated repository for all R packages. I've created a simple Shiny App that provides a summary of CRAN (a la #spotifywrapped) as well as a searchable database  of all CRAN packages that updates periodically.
+<p align="center">
+<img src="dashboard_screenshot.png" align="center" width="75%" alt="A screenshot of the CRAN++ interface"/>
+</p>
+
+From personal experience, I know how difficult it is to keep up with the R ecosystem. There are so many new packages and creative ways in which people are using R to do amazing things. R users will all be familiar with CRAN, or the Comprehensive R Archive Network, which acts as a regulated repository for all R packages. I've created a simple Shiny App that provides a summary of CRAN (a la #spotifywrapped), a searchable database  of all CRAN packages that updates periodically, and a Twitter board (#rstats) showcasing new functions and creative/cool ways to use R.
 
 Enjoy!
 
-### &#x1F64F Built With
+### :pray: Built With
 
 * [tidyverse](https://www.tidyverse.org/)
 * [shiny](https://shiny.rstudio.com/)
 * [shinydashboard](https://rstudio.github.io/shinydashboard/)
 * [shinycssloaders](https://github.com/daattali/shinycssloaders)
 * [plotly](https://plotly.com/)
+* [rtweet](https://github.com/ropensci/rtweet)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -79,13 +84,33 @@ There are three primary tabs: Dashboard, Database, and Tweets.
 
 ### Dashboard
 
+<p align="center">
+<img src="dashboard_screenshot.png" align="center" width="75%" alt="A screenshot of the dashboard"/>
+</p>
+
+The opening dashboard shows a few visualizations about the current number of CRAN packages, the number of published packages per year, the most popular package functions (extracted from their descriptions) and the most popular imported and suggested packages. 
+
+
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ### Database
 
+<p align="center">
+<img src="datatable_screenshot.png" align="center" width="75%" alt="A screenshot of the CRAN data table"/>
+</p>
+
+To the best of my knowledge, there is no data table for all of CRAN's packages, and it can be difficult to search through CRAN for a specific package. The **Databse** provides a searchable [dataTable] of CRAN packages. Users can search for text in any field or use regex in the main search bar.
+
 <p align="right">(<a href="#top">back to top</a>)</p>
 
+
 ### Tweets
+
+<p align="center">
+<img src="twitter_board_screenshot.png" align="center" width="75%" alt="A screenshot of the twitter board"/>
+</p>
+
+The **Tweet Bulletin Board** was taken from Garrick Aden-Buie, and it shows all tweets containing `#rstats` in a Pinterest-style wall. Users can quickly scan and read the stream of tweets. Additionally, configurable date filters allow users to look for tweets from particular date ranges.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -116,7 +141,6 @@ Twitter: [@lathanliou](https://twitter.com/LathanLiou)
 Project Link: [(C)RAN++](https://github.com/github_username/repo_name)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
-
 
 
 <!-- References -->

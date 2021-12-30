@@ -22,7 +22,7 @@ year_count_server <- function(id, data) {
                      group_by(year) %>%
                      count()
                    p <- ggplot(plotdata, aes(x = year, y = n)) + 
-                     geom_col() + 
+                     geom_col(fill = ADMINLTE_COLORS$primary) + 
                      theme_bw() +
                      labs(x = "Year",
                           y = "Count")
