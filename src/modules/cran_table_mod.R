@@ -2,7 +2,9 @@
 
 table_ui <- function(id) {
   ns <- NS(id)
-  DT::dataTableOutput(ns("cran_table"))
+  DT::dataTableOutput(ns("cran_table")) %>% 
+    withSpinner(type = 8,
+                color = "#4285F4")
 }
 
 table_server <- function(id, data) {

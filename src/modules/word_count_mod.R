@@ -9,7 +9,9 @@ word_count_ui <- function(id) {
     width = NULL,
     collapsible = TRUE,
     status = "primary",
-    wordcloud2Output(ns("word_plot"))
+    wordcloud2Output(ns("word_plot")) %>% 
+      withSpinner(type = 8,
+                  color = "#4285F4")
   )
 }
 
