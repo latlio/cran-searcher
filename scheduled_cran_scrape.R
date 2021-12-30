@@ -4,6 +4,7 @@ library(tidyverse)
 library(rvest)
 library(foreach)
 library(doParallel)
+library(cranlogs)
 source("src/data_wrangling_functions/scrape_cran_fcts.R")
 registerDoParallel(detectCores() - 1)
 
@@ -28,4 +29,15 @@ all_cran_metadata_df <- bind_rows(all_cran_metadata) %>%
          maintainer = str_replace(maintainer, "<[^\\)]+>", ""),
          maintainer = noquote(maintainer))
 
-write_rds(all_cran_metadata_df, paste0("data/cran-", Sys.Date(), ".rds"))
+#can't vectorize since I run into an http request too long error, have to map individually
+downloads_last_month <- map_dfr(all_cran_metadata_df$package,
+                                ~cranlogs::cran_downloads(.x,
+                                                          when = "last-month") %>%
+                                  group_by(package) %>%
+                                  summarize(downloads_last_month = sum(count)) %>%
+                                  ungroup())
+
+all_cran_metadata_df2 <- all_cran_metadata_df %>%
+  left_join(downloads_last_month)
+
+write_rds(all_cran_metadata_df2, paste0("data/cran-data.rds"))
